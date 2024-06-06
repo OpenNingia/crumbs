@@ -14,6 +14,7 @@ import (
 type RenderConfig struct {
 	VerticalLayout bool
 	WrapTextLimit  uint
+	Layout         string
 }
 
 // Render translates the mind note tree to a
@@ -21,7 +22,7 @@ type RenderConfig struct {
 func Render(wr io.Writer, note *crumbs.Entry, cfg RenderConfig) error {
 	htmlize := htmlLabelMaker(cfg.WrapTextLimit)
 
-	gr := newGraph(Vertical(cfg.VerticalLayout))
+	gr := newGraph(Vertical(cfg.VerticalLayout), Layout(cfg.Layout))
 
 	renderTree(gr, note.Root(), htmlize)
 
