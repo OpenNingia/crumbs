@@ -33,6 +33,7 @@ var (
 	flagWrapLim    uint
 	flagImagesPath string
 	flagImagesType string
+	flagLayoutName string
 )
 
 func main() {
@@ -47,6 +48,7 @@ func main() {
 	cfg := gv.RenderConfig{
 		WrapTextLimit:  flagWrapLim,
 		VerticalLayout: flagVertical,
+		Layout: flagLayoutName,
 	}
 	if err = gv.Render(os.Stdout, entry, cfg); err != nil {
 		fmt.Fprintf(os.Stderr, "error: %s\n", err.Error())
@@ -119,6 +121,7 @@ func configureFlags() {
 
 	flag.CommandLine.StringVar(&flagImagesPath, "images-path", "", "folder in which to look for image files")
 	flag.CommandLine.StringVar(&flagImagesType, "images-type", "", "images file extension [png,jpg,svg]")
+	flag.CommandLine.StringVar(&flagLayoutName, "layout", "dot", "layout engine [dot,neato,fdp,...]")
 
 	flag.CommandLine.Parse(os.Args[1:])
 }

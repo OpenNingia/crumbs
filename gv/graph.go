@@ -35,6 +35,13 @@ func Vertical(set bool) GraphOption {
 	}
 }
 
+// Vertical enables/diables the top to bottom layout direction.
+func Layout(name string) GraphOption {
+	return func(gr *dot.Graph) {
+		gr.Attr("layout", name)
+	}
+}
+
 // newGraph returns a new GraphViz DOT language graph
 func newGraph(opts ...GraphOption) *dot.Graph {
 	res := dot.NewGraph(dot.Undirected)
