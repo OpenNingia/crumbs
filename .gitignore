@@ -35,3 +35,6 @@
 
 # This is my wip ideas folder
 experiments/**
+
+# The local executable
+crumbs/crumbs

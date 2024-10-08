@@ -1,7 +1,7 @@
-module github.com/lucasepe/crumbs/crumbs
+module github.com/OpenNingia/crumbs/crumbs
 
 go 1.14
 
-require github.com/lucasepe/crumbs v0.3.0
+require github.com/OpenNingia/crumbs v0.4.0
 
-replace github.com/lucasepe/crumbs => ../
+replace github.com/OpenNingia/crumbs => ../

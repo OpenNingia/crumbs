@@ -125,6 +125,13 @@ go get -u github.com/lucasepe/crumbs/crumbs
 This will create the crumbs executable under your $GOPATH/bin directory.
 
 
+## Local build
+
+```bash
+cd crumbs
+go build
+```
+
 ## Ready-To-Use Releases 
 
 If you don't want to compile the sourcecode yourself, [Here you can find the tool already compiled](https://github.com/lucasepe/crumbs/releases/latest) for:
