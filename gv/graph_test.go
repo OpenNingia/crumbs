@@ -15,12 +15,12 @@ func TestNewNodeOptions(t *testing.T) {
 	}{
 		{
 			[]nodeAttribute{},
-			`digraph  {n1[fontname="Fira Code",fontsize="12",label="",margin="0.2,0.2",width="2"];}`,
+			`digraph  {n1[fontname="Fira Code",fontsize="12",label="",margin="0.2,0.2",shape="plain",width="2"];}`,
 		},
 
 		{
 			[]nodeAttribute{nodeFillColor("#ff0000")},
-			`digraph  {n1[fillcolor="#ff0000",fontname="Fira Code",fontsize="12",label="",margin="0.2,0.2",style="filled",width="2"];}`,
+			`digraph  {n1[fillcolor="#ff0000",fontname="Fira Code",fontsize="12",label="",margin="0.2,0.2",shape="plain",style="filled",width="2"];}`,
 		},
 
 		{
@@ -39,7 +39,7 @@ func TestNewNodeOptions(t *testing.T) {
 			gv := dot.NewGraph()
 			createNode(gv, "ID", tt.opts...)
 			if got := flatten(gv.String()); got != tt.want {
-				t.Errorf("got [%v] want [%v]", got, tt.want)
+				t.Errorf("got\n[%v]\nwant\n[%v]", got, tt.want)
 			}
 		})
 	}
@@ -52,11 +52,11 @@ func TestNodeHTMLabel(t *testing.T) {
 	}{
 		{
 			`<b>Bold</b>`,
-			`digraph  {n1[fontname="Fira Code",fontsize="12",label=<<b>Bold</b>>,margin="0.2,0.2",width="2"];}`,
+			`digraph  {n1[fontname="Fira Code",fontsize="12",label=<<b>Bold</b>>,margin="0.2,0.2",shape="plain",width="2"];}`,
 		},
 		{
 			`<table><tr><td>col 1</td></tr></table>`,
-			`digraph  {n1[fontname="Fira Code",fontsize="12",label=<<table><tr><td>col 1</td></tr></table>>,margin="0.2,0.2",width="2"];}`,
+			`digraph  {n1[fontname="Fira Code",fontsize="12",label=<<table><tr><td>col 1</td></tr></table>>,margin="0.2,0.2",shape="plain",width="2"];}`,
 		},
 	}
 
@@ -65,7 +65,7 @@ func TestNodeHTMLabel(t *testing.T) {
 			gv := dot.NewGraph()
 			createNode(gv, "ID", nodeLabel(tt.html, true))
 			if got := flatten(gv.String()); got != tt.want {
-				t.Errorf("got [%v] want [%v]", got, tt.want)
+				t.Errorf("got\n[%v]\nwant\n[%v]", got, tt.want)
 			}
 		})
 	}
