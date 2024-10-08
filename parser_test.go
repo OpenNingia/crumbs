@@ -3,6 +3,7 @@ package crumbs
 import (
 	"strings"
 	"testing"
+	"path/filepath"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -57,7 +58,7 @@ func TestLookForIcon(t *testing.T) {
 		fn(&tt.entry)
 
 		t.Run(tt.imagespath, func(t *testing.T) {
-			if got := tt.entry.icon; got != tt.want {
+			if got := tt.entry.icon; filepath.Clean(got) != filepath.Clean(tt.want) {
 				t.Errorf("got [%v] want [%v]", got, tt.want)
 			}
 		})
