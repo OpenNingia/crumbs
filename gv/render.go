@@ -6,8 +6,8 @@ import (
 	"strings"
 
 	"github.com/emicklei/dot"
-	"github.com/lucasepe/crumbs"
-	"github.com/lucasepe/crumbs/text"
+	"github.com/OpenNingia/crumbs"
+	"github.com/OpenNingia/crumbs/text"
 )
 
 // RenderConfig defines some render parameters.

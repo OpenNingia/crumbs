@@ -9,8 +9,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/lucasepe/crumbs"
-	"github.com/lucasepe/crumbs/gv"
+	"github.com/OpenNingia/crumbs"
+	"github.com/OpenNingia/crumbs/gv"
 )
 
 const (
@@ -23,7 +23,8 @@ const (
 /   \_ |    \|  :  ||   |   ||  O  | /  \ |
 \     ||  .  \     ||   |   ||     | \    |
  \____||__|\_|\__,_||___|___||_____|  \___| 
-Crafted with passion by Luca Sepe - https://github.com/lucasepe/crumbs`
+Crafted with passion by Luca Sepe - https://github.com/lucasepe/crumbs
+Fork by OpenNingia - https://github.com/OpenNingia/crumbs`
 )
 
 var (

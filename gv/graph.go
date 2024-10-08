@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/emicklei/dot"
-	"github.com/lucasepe/crumbs/text"
+	"github.com/OpenNingia/crumbs/text"
 )
 
 // GraphOption is a graph attribute.

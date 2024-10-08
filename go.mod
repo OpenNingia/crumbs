@@ -1,4 +1,4 @@
-module github.com/lucasepe/crumbs
+module github.com/OpenNingia/crumbs
 
 go 1.14
 
